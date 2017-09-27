@@ -2,13 +2,10 @@ class Bzt < Formula
   include Language::Python::Virtualenv
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org"
-  url "https://files.pythonhosted.org/packages/source/b/bzt/bzt-1.9.5.tar.gz"
-  sha256 "ef2353e0637175224db23263677cddc086085107a760303c09ce1bb6f50de363"
+  url "https://files.pythonhosted.org/packages/source/b/bzt/bzt-1.9.6.tar.gz"
+  sha256 "85f0394f53dda6a6c1bad1786fa59f9a4642b68f33b42a3521be00ec0eaf4e92"
   head "https://github.com/greyfenrir/taurus.git"
   depends_on :python if MacOS.version <= :snow_leopard
-  # depends_on :python
-  # depends_on "libxslt" => :build
-  # depends_on "libxml2" => :build
 
   resource "apiritif" do
     url "https://files.pythonhosted.org/packages/9b/45/32e87c13bb6ba9af46242858f80e1767be115076bb918fec26467757e020/apiritif-0.3.tar.gz"
@@ -21,8 +18,8 @@ class Bzt < Formula
   end
 
   resource "bzt" do
-    url "https://files.pythonhosted.org/packages/4f/85/3730bf6788e9d22a430324fef9dc81b7b65718ab1d6e2485d1eb12fc8d4f/bzt-1.9.5.tar.gz"
-    sha256 "ef2353e0637175224db23263677cddc086085107a760303c09ce1bb6f50de363"
+    url "https://files.pythonhosted.org/packages/76/3f/b2005924277461ac74c83a6ae6ec9235dcf2374c551d3494a6866139dfb8/bzt-1.9.6.tar.gz"
+    sha256 "85f0394f53dda6a6c1bad1786fa59f9a4642b68f33b42a3521be00ec0eaf4e92"
   end
 
   resource "certifi" do
@@ -41,8 +38,8 @@ class Bzt < Formula
   end
 
   resource "colorlog" do
-    url "https://files.pythonhosted.org/packages/50/3e/7ffa562b7931344bf851e57a1e8c349e07e48433bf006de4559b857fa3a1/colorlog-3.0.1.tar.gz"
-    sha256 "95371613e48e7c23ba9a64da23e836b9b9abfc001cfce48d53175cbce495abc5"
+    url "https://files.pythonhosted.org/packages/64/cf/9d2d7dba6cc4a877155d224441d3af2b6cab3d6c9c3c03811894395268fc/colorlog-3.1.0.tar.gz"
+    sha256 "f7c0efd9d960b43929027aa2b5a6c80d8ebec3e8d87cdec8b92696bf57428284"
   end
 
   resource "cssselect" do
@@ -100,6 +97,16 @@ class Bzt < Formula
     sha256 "12dd9c8abbad15f055e9579130035b38617020ce176f4a498b7870e6321ffa67"
   end
 
+  resource "py" do
+    url "https://files.pythonhosted.org/packages/68/35/58572278f1c097b403879c1e9369069633d1cbad5239b9057944bb764782/py-1.4.34.tar.gz"
+    sha256 "0f2d585d22050e90c7d293b6451c83db097df77871974d90efd5a30dc12fcde3"
+  end
+
+  resource "pytest" do
+    url "https://files.pythonhosted.org/packages/63/4a/db317d848325ba77e4ed498860b40ab53a8b49f1ae13612bc8aee75634f0/pytest-3.2.2.tar.gz"
+    sha256 "f46e49e0340a532764991c498244a60e3a37d7424a532b3ff1a6a7653f1a403a"
+  end
+
   resource "PyVirtualDisplay" do
     url "https://files.pythonhosted.org/packages/39/37/f285403a09cc261c56b6574baace1bdcf4b8c7428c8a7239cbba137bc0eb/PyVirtualDisplay-0.2.1.tar.gz"
     sha256 "012883851a992f9c53f0dc6a512765a95cf241bdb734af79e6bdfef95c6e9982"
@@ -116,8 +123,8 @@ class Bzt < Formula
   end
 
   resource "selenium" do
-    url "https://files.pythonhosted.org/packages/ac/d7/1928416439d066c60f26c87a8d1b78a8edd64c7d05a0aa917fa97a8ee02d/selenium-3.5.0.tar.gz"
-    sha256 "267418f5fde1a4f8c180e5b8f45bd57c6d45b1f7d8fa5ad699a48e9a98fa79a3"
+    url "https://files.pythonhosted.org/packages/e1/25/ad1ee3c019e45933c201ae3c8b3c84ab335a64a8172051ace583b7371b35/selenium-3.6.0.tar.gz"
+    sha256 "9563021c5cba084041e13c218eb531d9c6920dcfa0ba1024bb5bf2b6c0df1797"
   end
 
   resource "six" do
@@ -136,8 +143,8 @@ class Bzt < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/aa/35/b7d0fcdfcf2151327afa6bea68839aed1f1914a4225b24750bb8baf057c8/wheel-0.24.0.tar.gz"
-    sha256 "ef832abfedea7ed86b6eae7400128f88053a1da81a37c00613b1279544d585aa"
+    url "https://files.pythonhosted.org/packages/fa/b4/f9886517624a4dcb81a1d766f68034344b7565db69f13d52697222daeb72/wheel-0.30.0.tar.gz"
+    sha256 "9515fe0a94e823fd90b08d22de45d7bde57c90edce705b22f5e1ecf7e1b653c8"
   end
 
   def install
