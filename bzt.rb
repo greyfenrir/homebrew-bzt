@@ -5,7 +5,7 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/source/b/bzt/bzt-1.9.5.tar.gz"
   sha256 "ef2353e0637175224db23263677cddc086085107a760303c09ce1bb6f50de363"
   head "https://github.com/greyfenrir/taurus.git"
-  depends_on :python2
+  depends_on :python
   depends_on "libxslt" => :build
   depends_on "libxml2" => :build
 
