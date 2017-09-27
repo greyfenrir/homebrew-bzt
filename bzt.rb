@@ -5,9 +5,10 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/source/b/bzt/bzt-1.9.5.tar.gz"
   sha256 "ef2353e0637175224db23263677cddc086085107a760303c09ce1bb6f50de363"
   head "https://github.com/greyfenrir/taurus.git"
-  depends_on :python
-  depends_on "libxslt" => :build
-  depends_on "libxml2" => :build
+  depends_on :python if MacOS.version <= :snow_leopard
+  # depends_on :python
+  # depends_on "libxslt" => :build
+  # depends_on "libxml2" => :build
 
   resource "apiritif" do
     url "https://files.pythonhosted.org/packages/9b/45/32e87c13bb6ba9af46242858f80e1767be115076bb918fec26467757e020/apiritif-0.3.tar.gz"
