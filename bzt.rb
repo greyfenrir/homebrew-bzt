@@ -5,6 +5,7 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/source/b/bzt/bzt-1.9.6.tar.gz"
   sha256 "85f0394f53dda6a6c1bad1786fa59f9a4642b68f33b42a3521be00ec0eaf4e92"
   head "https://github.com/greyfenrir/taurus.git"
+
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "apiritif" do
@@ -15,11 +16,6 @@ class Bzt < Formula
   resource "astunparse" do
     url "https://files.pythonhosted.org/packages/1a/b7/3ba7ce33cbc8847e20ed1a4fbec2303a71b2512dec0194824e8dcaadc8de/astunparse-1.5.0.tar.gz"
     sha256 "55df3c2a659d6cb6a9a9041c750a8232a9925523405a8dfeb891b92d45a589cd"
-  end
-
-  resource "bzt" do
-    url "https://files.pythonhosted.org/packages/76/3f/b2005924277461ac74c83a6ae6ec9235dcf2374c551d3494a6866139dfb8/bzt-1.9.6.tar.gz"
-    sha256 "85f0394f53dda6a6c1bad1786fa59f9a4642b68f33b42a3521be00ec0eaf4e92"
   end
 
   resource "certifi" do
@@ -149,12 +145,11 @@ class Bzt < Formula
 
   def install
     virtualenv_install_with_resources
-    bin.install_symlink "#{libexec}/bin/bzt" => "bzt"
-    bin.install_symlink "#{libexec}/bin/jmx2yaml" => "jmx2yaml"
-    bin.install_symlink "#{libexec}/bin/soapui2yaml" => "soapui2yaml"
   end
 
   test do
-    system "#{bin}/bzt", "--help"
+    test_cmd = "#{bin}/bzt -o execution.0.executor=nose -o execution.0.scenario.requests.0=http://gettaurus.org"
+    output_text = pipe_output(test_cmd)
+    assert_match "INFO: Samples count: 1, 0.00% failures", output_text
   end
 end
