@@ -2,8 +2,8 @@ class Bzt < Formula
   include Language::Python::Virtualenv
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org"
-  url "https://files.pythonhosted.org/packages/source/b/bzt/bzt-1.10.2.tar.gz"
-  sha256 "549c6a83a4aeec1446ffce2430d8839c000e1e9050747a9654e23c7b747423e9"
+  url "https://files.pythonhosted.org/packages/source/b/bzt/bzt-1.10.3.tar.gz"
+  sha256 "1a8ad80fc9a4ed54aa1b099bef6590adc3cfd806322d3a11a0d9decdf9477acf"
   head "https://github.com/greyfenrir/taurus.git"
 
   bottle do
@@ -151,11 +151,12 @@ class Bzt < Formula
   end
 
   def install
+    ENV["SDKROOT"] = MacOS.sdk_path if MacOS.version == :sierra
     virtualenv_install_with_resources
   end
 
   test do
-    cmd = "#{bin}/bzt -o execution.0.executor=nose -o execution.0.scenario.requests.0=https://gettaurus.org/"
+    cmd = "#{bin}/bzt -o execution.executor=nose -o execution.iterations=1 -o execution.scenario.requests.0=http://gettaurus.org"
     assert_match "INFO: Samples count: 1, 0.00% failures", shell_output(cmd)
   end
 end
